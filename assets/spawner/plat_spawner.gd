@@ -32,8 +32,8 @@ func generate_cloud(delta : float) ->void :
 	if cloud_protect_time < 0 && randf() < cloud_prob:
 		var cloud_inst = cloud_scene.instance()
 		plat_folder.add_child(cloud_inst)
-		cloud_inst.position.x = screen_size.x
-		cloud_inst.position.y = randf() * screen_size.y
+		cloud_inst.position.x = screen_size.x 
+		cloud_inst.position.y = (randf() - 0.5) * screen_size.y
 		
 		cloud_protect_time = cloud_freq
 	else:
@@ -43,8 +43,8 @@ func generate_scale(delta : float) ->void :
 	if scale_protect_time < 0 && randf() < scale_prob:
 		var scale_inst = scale_scene.instance()
 		plat_folder.add_child(scale_inst)
-		scale_inst.position.x = screen_size.x
-		scale_inst.position.y = randf() * screen_size.y
+		scale_inst.position.x = screen_size.x 
+		scale_inst.position.y = (randf() - 0.5) * screen_size.y
 		
 		scale_protect_time = scale_freq
 	else:
