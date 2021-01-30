@@ -139,19 +139,19 @@ parameters/playback = SubResource( 14 )
 [node name="GroundDetector" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( -35, 72 )
+position = Vector2( -35, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="RayCast2D2" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( 0, 72 )
+position = Vector2( 0, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="RayCast2D3" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( 35, 72 )
+position = Vector2( 35, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
