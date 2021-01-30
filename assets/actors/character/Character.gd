@@ -7,12 +7,12 @@ export var _jump_velocity : float = 200.0
 
 var _velocity : Vector2
 var is_jump : bool = false
-var jump_protect_time = 0.1
+var jump_protect_time = 0.2
 var _max_height_velocity : float = 800.0
 
 export var ini_mass : float = 0.5
 var current_plat
-var throw_protect_time : float = 0.1
+var throw_protect_time : float = 1.0
 
 var look_direction : Vector2
 
@@ -52,7 +52,7 @@ func lose_mass(lose : float) -> void:
 	if lose > 0:
 		emit_signal("spawn_cubic", global_position, lose)
 		# mass = max(mass - lose, 0.1)
-		throw_protect_time = 0.1
+		throw_protect_time = 1.0
 		print(mass)
 
 
@@ -71,7 +71,7 @@ func set_velocity(delta : float, dir : Vector2) :
 func do_jump():
 	if jump_protect_time <=0:
 		is_jump = true
-		jump_protect_time = 0.1
+		jump_protect_time = 0.2
 	
 func switch_collision(enable : bool) -> void:
 	if enable:

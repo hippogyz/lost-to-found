@@ -5,8 +5,8 @@ var screen_size
 
 var scale_scene
 var scale_protect_time
-export var scale_freq : float = 4.0
-export var scale_prob : float = 0.2
+export var scale_freq : float = 7.0
+export var scale_prob : float = 0.4
 
 var cloud_scene
 var cloud_protect_time
@@ -32,11 +32,11 @@ func _process(delta: float) -> void:
 
 func generate_cloud(delta : float) ->void :
 	if cloud_protect_time < 0 && randf() < cloud_prob:
-		for i in range(1):
+		for i in range(3):
 			var cloud_inst = cloud_scene.instance()
 			plat_folder.add_child(cloud_inst)
 			cloud_inst.position.x = auto_move.position.x + screen_size.x * (0.9 + 0.3 * (i + randf())) 
-			cloud_inst.position.y = auto_move.position.y + (0.3 + randf()) * screen_size.y * (1 - 0.5 * i)
+			cloud_inst.position.y = auto_move.position.y + (0.3 + randf()) * screen_size.y * (0.7 - 0.8 * i)
 		
 		cloud_protect_time = cloud_freq
 	else:
