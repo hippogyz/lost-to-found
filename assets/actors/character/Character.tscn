@@ -1,0 +1,128 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/actors/character/Character.gd" type="Script" id=1]
+[ext_resource path="res://graphics/lc-0.png" type="Texture" id=2]
+[ext_resource path="res://assets/actors/character/chara_state_mechine.gd" type="Script" id=3]
+[ext_resource path="res://assets/actors/character/chara_move_state/IdleState.gd" type="Script" id=4]
+[ext_resource path="res://assets/actors/character/chara_move_state/MoveState.gd" type="Script" id=5]
+[ext_resource path="res://assets/actors/character/chara_move_state/JumpState.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle_anima"
+length = 0.05
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "jump_anima"
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 2 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "move_anima"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 5 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "idle_anima"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "jump_anima"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "move_anima"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/idle_anima/node = SubResource( 4 )
+states/idle_anima/position = Vector2( 182, 78 )
+states/jump_anima/node = SubResource( 5 )
+states/jump_anima/position = Vector2( 326, 193 )
+states/move_anima/node = SubResource( 6 )
+states/move_anima/position = Vector2( 476, 78 )
+transitions = [ "idle_anima", "move_anima", SubResource( 7 ), "idle_anima", "jump_anima", SubResource( 8 ), "move_anima", "jump_anima", SubResource( 9 ), "jump_anima", "idle_anima", SubResource( 10 ), "jump_anima", "move_anima", SubResource( 11 ), "move_anima", "idle_anima", SubResource( 12 ) ]
+start_node = "idle_anima"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+
+[node name="Character" type="KinematicBody2D"]
+script = ExtResource( 1 )
+velocity_value = 20000.0
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 6
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -55, 70, 64.0792, 70.1885, 43.1017, -79.9539, -40.5726, -79.7182 )
+
+[node name="CharacterStateMechine" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="IdleState" type="Node" parent="CharacterStateMechine"]
+script = ExtResource( 4 )
+
+[node name="MoveState" type="Node" parent="CharacterStateMechine"]
+script = ExtResource( 5 )
+
+[node name="JumpState" type="Node" parent="CharacterStateMechine"]
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle_anima = SubResource( 1 )
+anims/jump_anima = SubResource( 2 )
+anims/move_anima = SubResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 13 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 14 )

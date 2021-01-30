@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/pop fonts.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.6, 1.1, 1.7, 2.3, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.752941, 0.858824, 0.447059, 1 ), Color( 0.0941176, 0.972549, 0.435294, 1 ), Color( 1, 0.298039, 0.298039, 1 ), Color( 0.294118, 0.564706, 0.917647, 1 ), Color( 0.823529, 0.388235, 0.964706, 1 ), Color( 0.752941, 0.858824, 0.447059, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0.392157 )
+show_behind_parent = true
+margin_left = -1.18787
+margin_right = 1918.81
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VC" type="VBoxContainer" parent="."]
+margin_right = 1917.0
+margin_bottom = 1081.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CC" type="CenterContainer" parent="VC"]
+margin_right = 1917.0
+margin_bottom = 1081.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VC/CC"]
+margin_left = 118.0
+margin_top = 380.0
+margin_right = 1798.0
+margin_bottom = 701.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.752941, 0.858824, 0.447059, 1 )
+text = "ALL STAGES CLEAR
+CONGRATULATIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VC/CC"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="CC2" type="CenterContainer" parent="VC"]
+visible = false
+margin_top = 362.0
+margin_right = 1920.0
+margin_bottom = 1079.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="VC/CC2"]
+margin_left = 901.0
+margin_top = 181.0
+margin_right = 1018.0
+margin_bottom = 536.0
+custom_fonts/font = ExtResource( 1 )
+text = "5
+"
