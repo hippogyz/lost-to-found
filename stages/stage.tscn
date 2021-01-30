@@ -51,12 +51,8 @@ position = Vector2( 629.061, 256.758 )
 collision_mask = 0
 
 [node name="scale" parent="." instance=ExtResource( 5 )]
-<<<<<<< HEAD
 position = Vector2( 843.911, 225.749 )
 z_index = -1
-=======
-position = Vector2( 841.391, 210.21 )
->>>>>>> 53d993c2b5fc1fb7eeb9a1d030bebfe67aafd861
 
 [node name="weight" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1037.78, 333.747 )
