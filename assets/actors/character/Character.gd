@@ -10,9 +10,14 @@ var is_jump : bool = false
 var jump_protect_time = 0.1
 var _max_height_velocity : float = 800.0
 
+export var ini_mass : float = 0.5
+var current_plat
+var throw_protect_time : float = 1.0
+
 var look_direction : Vector2
 
 func _ready() -> void:
+	mass = ini_mass
 	_velocity = Vector2.ZERO
 
 
@@ -37,10 +42,25 @@ func _integrate_forces(s) ->void :
 	s.set_linear_velocity(lv)
 	s.set_angular_velocity(- rotation_degrees * 0.5 )
 
+func _process(delta: float) -> void:
+	if throw_protect_time > 0:
+		throw_protect_time -= delta
+	else:
+		lose_mass( Input.get_action_strength("throw_order") * 0.1 )
+
+func lose_mass(lose : float) -> void:
+	if lose > 0:
+		mass = max(mass - lose, 0.1)
+		throw_protect_time = 1.0
+		print(mass)
+
 
 func on_ground() -> bool:
 	for rc in ground_detector.get_children():
 		if rc.is_colliding(): 
+			if rc.get_collider() != current_plat:
+				current_plat = rc.get_collider()
+				mass = ini_mass
 			return true
 	return false
 

@@ -14,7 +14,6 @@
 [node name="Stage" type="Node2D"]
 script = ExtResource( 7 )
 next_stage = ExtResource( 10 )
-curtain_time = 30.0
 
 [node name="AutoMove" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -34,7 +33,6 @@ region_rect = Rect2( 0, 0, 1920, 1024 )
 script = ExtResource( 4 )
 
 [node name="spikes" parent="AutoMove" instance=ExtResource( 8 )]
-z_index = 0
 
 [node name="Ruler" parent="AutoMove" instance=ExtResource( 9 )]
 
@@ -55,7 +53,7 @@ position = Vector2( 629.061, 256.758 )
 collision_mask = 0
 
 [node name="scale" parent="." instance=ExtResource( 5 )]
-position = Vector2( 843.911, 225.749 )
+position = Vector2( 841.391, 210.21 )
 
 [node name="weight" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1037.78, 333.747 )
