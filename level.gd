@@ -12,6 +12,7 @@ var rest_try_time : int
 var is_game_over = false
 var is_fall = false
 var max_height = 0
+const weight_cubic = preload("res://assets/weight_cubic/weight.tscn")
 onready var player_m = get_node("Character")
 const stage_clear = preload("res://gui/StageClear.tscn")
 const game_over = preload("res://gui/GameOver.tscn")
@@ -52,4 +53,13 @@ func game_over(score : int) -> void:
 	popup.connect("restart", self, "restart")
 	emit_signal("game_over_signal")
 
+export var spawn_cubic_range = 5
 
+func _on_Character_spawn_cubic(pos, lose):
+	var n = int(lose / 0.1)
+	for i in range(n):
+		var p = Vector2(randf(), randf()) * spawn_cubic_range + pos
+		var w = weight_cubic.instance()
+		w.global_position = p
+		add_child(w) 
+	pass # Replace with function body.

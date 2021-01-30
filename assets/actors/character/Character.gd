@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 onready var ground_detector = get_node("GroundDetector")
-
+signal spawn_cubic(pos, lose)
 export var velocity_value : float = 200.0
 export var _jump_velocity : float = 200.0
 
@@ -12,7 +12,7 @@ var _max_height_velocity : float = 800.0
 
 export var ini_mass : float = 0.5
 var current_plat
-var throw_protect_time : float = 1.0
+var throw_protect_time : float = 0.1
 
 var look_direction : Vector2
 
@@ -50,7 +50,8 @@ func _process(delta: float) -> void:
 
 func lose_mass(lose : float) -> void:
 	if lose > 0:
-		mass = max(mass - lose, 0.1)
+		emit_signal("spawn_cubic", global_position, lose)
+		# mass = max(mass - lose, 0.1)
 		throw_protect_time = 1.0
 		print(mass)
 
@@ -75,8 +76,9 @@ func do_jump():
 func switch_collision(enable : bool) -> void:
 	if enable:
 		collision_layer = 1
-		collision_mask = 4
+		collision_mask = 36
 	else:
 		collision_layer = 256
 		collision_mask = 256
 	
+

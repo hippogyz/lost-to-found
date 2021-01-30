@@ -39,6 +39,7 @@ window/stretch/aspect="keep"
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+singletons_disabled=[  ]
 
 [importer_defaults]
 
@@ -96,6 +97,10 @@ throw_order={
 2d_physics/layer_4="scale"
 2d_physics/layer_5="game_over"
 2d_physics/layer_9="jumping_layer"
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [rendering]
 
