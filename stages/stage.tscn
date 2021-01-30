@@ -18,7 +18,7 @@ curtain_time = 30.0
 
 [node name="AutoMove" type="Node2D" parent="."]
 script = ExtResource( 3 )
-Velocity = Vector2( -1, 1 )
+Velocity = Vector2( -1, 0.5 )
 
 [node name="Camera2D" type="Camera2D" parent="AutoMove"]
 anchor_mode = 0
@@ -50,7 +50,7 @@ z_index = -500
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 629.061, 256.758 )
 collision_mask = 0
-ini_mass = 0.5
+ini_mass = 1.0
 
 [node name="Foreground" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 550.299 )
@@ -75,7 +75,7 @@ z_index = -1
 position = Vector2( 843.911, 225.749 )
 z_index = -1
 left_weight_number = 0
-right_weight_number = 5
+right_weight_number = 12
 
 [node name="scale2" parent="PlatContainer" instance=ExtResource( 5 )]
 position = Vector2( 1266.11, 73.7416 )
