@@ -34,3 +34,5 @@ position = Vector2( 611.017, 508.286 )
 
 [node name="cloud" parent="." instance=ExtResource( 4 )]
 position = Vector2( 478.552, 541.165 )
+
+[node name="PlatContainer" type="Node2D" parent="."]
