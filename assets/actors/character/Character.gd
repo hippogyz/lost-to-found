@@ -71,6 +71,8 @@ func on_ground() -> bool:
 
 func set_velocity(delta : float, dir : Vector2) :
 	_velocity = dir * velocity_value
+	if dir.x * get_node("sprite").scale.x < 0:
+		get_node("sprite").scale.x *= -1
 
 func do_jump():
 	if jump_protect_time <=0:
