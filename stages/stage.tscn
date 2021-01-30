@@ -13,7 +13,8 @@
 script = ExtResource( 3 )
 
 [node name="Character" parent="AutoMove" instance=ExtResource( 1 )]
-position = Vector2( 1074.41, 439.563 )
+position = Vector2( 347.41, 379.563 )
+collision_mask = 0
 
 [node name="scale" parent="AutoMove" instance=ExtResource( 5 )]
 position = Vector2( 841.391, 210.21 )
