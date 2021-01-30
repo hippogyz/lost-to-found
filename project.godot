@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Lost To Found"
+run/main_scene="res://stages/stage.tscn"
 config/icon="res://ball-logo.png"
 config/windows_native_icon="res://askk2-2pyp4-005.ico"
 
@@ -70,6 +71,8 @@ throw_order={
 2d_physics/layer_2="cubic"
 2d_physics/layer_3="tray"
 2d_physics/layer_4="scale"
+2d_physics/layer_5="game_over"
+2d_physics/layer_9="jumping_layer"
 
 [rendering]
 

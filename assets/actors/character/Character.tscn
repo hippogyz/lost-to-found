@@ -98,9 +98,13 @@ start_node = "idle_anima"
 
 [node name="Character" type="RigidBody2D"]
 collision_mask = 4
+mass = 0.5
 physics_material_override = SubResource( 15 )
+gravity_scale = 7.0
 angular_damp = 50.0
 script = ExtResource( 1 )
+velocity_value = 300.0
+_jump_velocity = 500.0
 
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
