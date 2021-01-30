@@ -50,7 +50,6 @@ z_index = -500
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 629.061, 256.758 )
 collision_mask = 0
-ini_mass = 1.0
 
 [node name="Foreground" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 550.299 )
@@ -75,7 +74,7 @@ z_index = -1
 position = Vector2( 843.911, 225.749 )
 z_index = -1
 left_weight_number = 0
-right_weight_number = 12
+right_weight_number = 5
 
 [node name="scale2" parent="PlatContainer" instance=ExtResource( 5 )]
 position = Vector2( 1266.11, 73.7416 )
@@ -96,5 +95,5 @@ position = Vector2( 2235.37, 54.5836 )
 scale_freq = 6.0
 scale_prob = 0.2
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
-[connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
 [connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]
+[connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
