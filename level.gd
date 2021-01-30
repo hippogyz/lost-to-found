@@ -28,6 +28,7 @@ func game_over(score : int) -> void:
 	$AutoMove.Velocity = Vector2(0, 0)
 	print("%s: game over" % get_tree().get_current_scene().get_name())
 	var popup = game_over.instance()
+	popup.score = score
 	$AutoMove.add_child(popup)
 	popup.connect("count_down_finish", self, "restart")
 	emit_signal("game_over_signal")
@@ -35,5 +36,5 @@ func game_over(score : int) -> void:
 
 func _on_spikes_player_on_spikes():
 	$AutoMove.Velocity = Vector2(0, 0)
-	game_over(5)
+	game_over(-$AutoMove/Ruler.pixelToHeight(player_m.global_position.y) + $AutoMove/Ruler.Offset) 
 	pass # Replace with function body.

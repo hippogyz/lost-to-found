@@ -4,7 +4,7 @@ signal count_down_finish()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+export var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$VC/CC2/Label2.text = String(int($Timer.time_left))
+	$VC/CC3/HBoxContainer/Score.text = String(int(score))
 	pass
 
 
