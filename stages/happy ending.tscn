@@ -61,7 +61,7 @@ z_index = -5
 texture = ExtResource( 7 )
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
-position = Vector2( 438.504, 873.014 )
+position = Vector2( 437.56, 856.968 )
 
 [node name="sprite" parent="Character" index="0"]
 position = Vector2( 14.9831, -76.9131 )
@@ -70,12 +70,12 @@ scale = Vector2( 2, 2 )
 [node name="AnimationTree" parent="Character" index="4"]
 parameters/playback = SubResource( 1 )
 
-[node name="GroundDetector" parent="Character" index="5"]
-visible = false
-
-[node name="RigidBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2147483919
-collision_mask = 271
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 4
+collision_mask = 257
+mode = 1
+custom_integrator = true
+angular_damp = 9999.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 954.921, 956.919 )
