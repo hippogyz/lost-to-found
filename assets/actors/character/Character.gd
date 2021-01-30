@@ -12,7 +12,7 @@ var _max_height_velocity : float = 800.0
 
 export var ini_mass : float = 0.5
 var current_plat
-var throw_protect_time : float = 0.3
+var throw_protect_time : float = 0.1
 var blackness : float = 0.0
 
 var look_direction : Vector2
@@ -54,9 +54,9 @@ func lose_mass(lose : float) -> void:
 	if lose > 0:
 		emit_signal("spawn_cubic", global_position, lose)
 		# mass = max(mass - lose, 0.1)
-		blackness = min(1.0, blackness + 0.05)
+		blackness = min(1.0, blackness + 0.003)
 		get_node("sprite").material.set_shader_param("blackness", blackness)
-		throw_protect_time = 0.3
+		throw_protect_time = 0.1
 		print(mass)
 
 

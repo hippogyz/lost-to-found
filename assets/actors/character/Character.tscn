@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/actors/character/Character.gd" type="Script" id=1]
 [ext_resource path="res://graphics/p-act.png" type="Texture" id=2]
@@ -9,20 +9,23 @@
 [ext_resource path="res://assets/actors/character/animation/move_anima.tres" type="Animation" id=7]
 [ext_resource path="res://assets/actors/character/animation/idle_anima.tres" type="Animation" id=8]
 [ext_resource path="res://assets/actors/character/animation/jump_anima.tres" type="Animation" id=9]
+[ext_resource path="res://assets/actors/character/Character.shader" type="Shader" id=10]
 
-[sub_resource type="PhysicsMaterial" id=12]
+[sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
 
-[sub_resource type="AnimationNodeAnimation" id=2]
-animation = "idle_anima"
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 10 )
+shader_param/blackness = null
 
 [sub_resource type="AnimationNodeAnimation" id=3]
-animation = "jump_anima"
+animation = "idle_anima"
 
 [sub_resource type="AnimationNodeAnimation" id=4]
-animation = "move_anima"
+animation = "jump_anima"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "move_anima"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=6]
 
@@ -34,22 +37,24 @@ animation = "move_anima"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachine" id=11]
-states/idle_anima/node = SubResource( 2 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachine" id=12]
+states/idle_anima/node = SubResource( 3 )
 states/idle_anima/position = Vector2( 182, 78 )
-states/jump_anima/node = SubResource( 3 )
+states/jump_anima/node = SubResource( 4 )
 states/jump_anima/position = Vector2( 326, 193 )
-states/move_anima/node = SubResource( 4 )
+states/move_anima/node = SubResource( 5 )
 states/move_anima/position = Vector2( 476, 78 )
-transitions = [ "idle_anima", "move_anima", SubResource( 5 ), "idle_anima", "jump_anima", SubResource( 6 ), "move_anima", "jump_anima", SubResource( 7 ), "jump_anima", "idle_anima", SubResource( 8 ), "jump_anima", "move_anima", SubResource( 9 ), "move_anima", "idle_anima", SubResource( 10 ) ]
+transitions = [ "idle_anima", "move_anima", SubResource( 6 ), "idle_anima", "jump_anima", SubResource( 7 ), "move_anima", "jump_anima", SubResource( 8 ), "jump_anima", "idle_anima", SubResource( 9 ), "jump_anima", "move_anima", SubResource( 10 ), "move_anima", "idle_anima", SubResource( 11 ) ]
 start_node = "idle_anima"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="Character" type="RigidBody2D"]
 collision_mask = 36
 mass = 0.5
-physics_material_override = SubResource( 12 )
+physics_material_override = SubResource( 2 )
 gravity_scale = 7.0
 continuous_cd = 2
 angular_damp = 50.0
@@ -58,7 +63,7 @@ velocity_value = 300.0
 _jump_velocity = 600.0
 
 [node name="sprite" type="Sprite" parent="."]
-material = SubResource( 18 )
+material = SubResource( 1 )
 position = Vector2( -2.83163, -7.8656 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
@@ -83,16 +88,15 @@ script = ExtResource( 5 )
 script = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle_anima"
 anims/idle_anima = ExtResource( 8 )
 anims/jump_anima = ExtResource( 9 )
 anims/move_anima = ExtResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 11 )
+tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 12 )
+parameters/playback = SubResource( 13 )
 
 [node name="GroundDetector" type="Node2D" parent="."]
 position = Vector2( 2.20239, -67.6443 )
