@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/weight_cubic/cubic.png" type="Texture" id=1]
+[ext_resource path="res://graphics/weight.png" type="Texture" id=1]
 
 [sub_resource type="PhysicsMaterial" id=1]
 rough = true
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 4 )
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="weight" type="RigidBody2D"]
 collision_layer = 2
@@ -20,5 +19,6 @@ angular_damp = 50.0
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 0, 1.12247 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
