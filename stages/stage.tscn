@@ -8,7 +8,7 @@
 [ext_resource path="res://level.gd" type="Script" id=7]
 [ext_resource path="res://assets/tiles/spikes.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/tiles/Ruler.tscn" type="PackedScene" id=9]
-[ext_resource path="res://stages/happy ending.tscn" type="PackedScene" id=10]
+[ext_resource path="res://stages/happy_ending_anima/happy ending.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/spawner/plat_spawner.tscn" type="PackedScene" id=11]
 
 [node name="Stage" type="Node2D"]
@@ -93,5 +93,5 @@ scale_freq = 6.0
 scale_prob = 0.2
 cloud_freq = 8.0
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
-[connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
 [connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]
+[connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]

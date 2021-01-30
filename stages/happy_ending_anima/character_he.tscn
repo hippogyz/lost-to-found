@@ -1,9 +1,269 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://stages/happy_ending_anima/character_he.gd" type="Script" id=1]
 [ext_resource path="res://stages/happy_ending_anima/p-end.png" type="Texture" id=2]
+[ext_resource path="res://stages/happy_ending_anima/npc-act.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=35]
+resource_name = "New Anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 198.891, -93.4388 ), Vector2( 178.891, -103.439 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "New Anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 5 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "New Anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 8, 9 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "New Anim"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 14 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 177.149, -31.38 ), Vector2( 170.149, -51.38 ), Vector2( 177.149, -41.38 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "friend"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 7, 6, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 4, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Sprite2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Sprite2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 160.104, -130 ), Vector2( 180.104, -170 ), Vector2( 170.104, -190 ), Vector2( 150.104, -160 ), Vector2( 160.104, -130 ), Vector2( 170.104, -140 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/friend1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite/friend2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.3, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite/friend3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite/friend4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_anima_final_of_final"
+} ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "hum"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 7, 6, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 4, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Sprite2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Sprite2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 160.104, -130 ), Vector2( 180.104, -170 ), Vector2( 170.104, -190 ), Vector2( 150.104, -160 ), Vector2( 160.104, -130 ), Vector2( 170.104, -140 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -20,6 +280,59 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "normal_hum"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 9, 8, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 4, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Sprite2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Sprite2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 160.104, -130 ), Vector2( 170.104, -190 ), Vector2( 160.104, -130 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -39,6 +352,74 @@ tracks/0/keys = {
 "values": [ 2, 9, 8, 5 ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "sigh"
+length = 1.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 8, 3, 0 ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sprite/Sprite2:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -150, -0.25, 0, 0.25, 0, -70, -0.25, 0, 0.25, 0, -150, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 1.6 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Sprite2:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.7, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "anima_sigh_to_walk"
+} ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "test"
+
 [sub_resource type="Animation" id=3]
 resource_name = "walk"
 loop = true
@@ -56,40 +437,58 @@ tracks/0/keys = {
 "values": [ 1, 7, 6, 4 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "friend"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "hum"
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "normal_hum"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "normal_walk"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
-animation = "walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "sigh"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
 
 [sub_resource type="AnimationNodeStateMachine" id=6]
+states/friend/node = SubResource( 32 )
+states/friend/position = Vector2( 990, 192 )
+states/hum/node = SubResource( 28 )
+states/hum/position = Vector2( 990, 112 )
 states/idle/node = SubResource( 8 )
 states/idle/position = Vector2( 234, 72 )
+states/normal_hum/node = SubResource( 24 )
+states/normal_hum/position = Vector2( 830, 112 )
 states/normal_walk/node = SubResource( 9 )
 states/normal_walk/position = Vector2( 464, 72 )
-states/walk/node = SubResource( 10 )
-states/walk/position = Vector2( 342, 159 )
-transitions = [ "idle", "walk", SubResource( 11 ), "walk", "idle", SubResource( 12 ), "idle", "normal_walk", SubResource( 13 ), "normal_walk", "idle", SubResource( 14 ), "normal_walk", "walk", SubResource( 15 ), "walk", "normal_walk", SubResource( 16 ) ]
+states/sigh/node = SubResource( 23 )
+states/sigh/position = Vector2( 647, 112 )
+transitions = [ "idle", "normal_walk", SubResource( 13 ), "normal_walk", "idle", SubResource( 14 ), "normal_walk", "sigh", SubResource( 25 ), "sigh", "normal_hum", SubResource( 26 ), "normal_hum", "hum", SubResource( 29 ), "hum", "friend", SubResource( 33 ), "friend", "hum", SubResource( 38 ) ]
 start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=7]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="character_he" type="KinematicBody2D"]
 position = Vector2( 14.2544, -14.2544 )
 script = ExtResource( 1 )
 
@@ -97,15 +496,115 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1.7818 )
+position = Vector2( 0, -20 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+position = Vector2( 170.104, -140 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 3
+frame = 1
+region_enabled = true
+region_rect = Rect2( 286.565, 900.035, 330.435, 200.738 )
+
+[node name="friend1" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -132.149, -152.172 )
+z_index = -2
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/friend1"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 35 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/friend1"]
+position = Vector2( 178.891, -103.439 )
+z_index = -1
+texture = ExtResource( 3 )
+vframes = 4
+frame = 3
+region_enabled = true
+region_rect = Rect2( 903.629, 620.856, 96.6947, 378.979 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite/friend1"]
+position = Vector2( 110.792, -60.0678 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 3 )
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2( 903.629, 605.885, 96.6947, 388.106 )
+
+[node name="friend2" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 160.181, -96.1085 )
+z_index = -2
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/friend2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 36 )
+
+[node name="friend3" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -137.489, 100.113 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/friend3"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 37 )
+
+[node name="friend4" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 129.479, 132.149 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/friend4"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 34 )
+
+[node name="Sprite" type="Sprite" parent="Sprite/friend4"]
+position = Vector2( 177.149, -31.38 )
+z_index = -1
+texture = ExtResource( 3 )
+vframes = 4
+region_enabled = true
+region_rect = Rect2( 902.571, 610.777, 100.701, 375.826 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite/friend4"]
+position = Vector2( 116.214, -37.6384 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 3 )
+vframes = 4
 frame = 2
+region_enabled = true
+region_rect = Rect2( 902.571, 610.777, 100.701, 385.182 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/friend = SubResource( 31 )
+anims/hum = SubResource( 27 )
 anims/idle = SubResource( 2 )
+anims/normal_hum = SubResource( 30 )
 anims/normal_walk = SubResource( 4 )
+anims/sigh = SubResource( 15 )
+anims/test = SubResource( 22 )
 anims/walk = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
