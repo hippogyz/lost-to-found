@@ -52,7 +52,7 @@ func lose_mass(lose : float) -> void:
 	if lose > 0:
 		emit_signal("spawn_cubic", global_position, lose)
 		# mass = max(mass - lose, 0.1)
-		throw_protect_time = 1.0
+		throw_protect_time = 0.1
 		print(mass)
 
 
