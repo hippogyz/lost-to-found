@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/actors/character/Character.gd" type="Script" id=1]
 [ext_resource path="res://graphics/p-act.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/actors/character/animation/idle_anima.tres" type="Animation" id=8]
 [ext_resource path="res://assets/actors/character/animation/jump_anima.tres" type="Animation" id=9]
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="PhysicsMaterial" id=12]
 friction = 0.0
 
 [sub_resource type="AnimationNodeAnimation" id=2]
@@ -47,9 +47,9 @@ start_node = "idle_anima"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Character" type="RigidBody2D"]
-collision_mask = 4
+collision_mask = 36
 mass = 0.5
-physics_material_override = SubResource( 1 )
+physics_material_override = SubResource( 12 )
 gravity_scale = 7.0
 continuous_cd = 2
 angular_damp = 50.0
@@ -58,11 +58,13 @@ velocity_value = 300.0
 _jump_velocity = 600.0
 
 [node name="sprite" type="Sprite" parent="."]
+material = SubResource( 18 )
 position = Vector2( -2.83163, -7.8656 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
+frame = 9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -6.63547, 1.11438 )
