@@ -20,19 +20,26 @@ extents = Vector2( 80, 10 )
 friction = 0.0
 bounce = 0.5
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 50, 10 )
 
 [node name="scale" type="Node2D"]
 position = Vector2( 371.872, 136.671 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0, -2.82849 )
+rect = Rect2( -960, -540, 1920, 1080 )
+process_parent = true
+physics_process_parent = true
 
 [node name="arm_joint" type="PinJoint2D" parent="."]
 node_a = NodePath("../base")
 node_b = NodePath("../arm")
 
 [node name="arm" type="RigidBody2D" parent="."]
-position = Vector2( 30, 0 )
 collision_layer = 8
 collision_mask = 8
+mass = 0.1
 physics_material_override = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="arm"]
@@ -49,7 +56,7 @@ node_b = NodePath("RigidBody2D")
 [node name="RigidBody2D" type="RigidBody2D" parent="arm/left_joint"]
 collision_layer = 4
 collision_mask = 3
-physics_material_override = ExtResource( 5 )
+angular_damp = 50.0
 
 [node name="Sprite" type="Sprite" parent="arm/left_joint/RigidBody2D"]
 position = Vector2( -1.33487, 98.7782 )
@@ -68,7 +75,7 @@ node_b = NodePath("RigidBody2D")
 position = Vector2( 0, -1.05946 )
 collision_layer = 4
 collision_mask = 2147483651
-physics_material_override = ExtResource( 5 )
+angular_damp = 50.0
 
 [node name="Sprite" type="Sprite" parent="arm/right_joint/RigidBody2D"]
 position = Vector2( 2.00226, 94.1062 )
@@ -79,8 +86,8 @@ position = Vector2( 0, 150 )
 shape = SubResource( 3 )
 
 [node name="base" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 6
+collision_layer = 0
+collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="base"]
 position = Vector2( 6, 209 )
@@ -92,19 +99,10 @@ shape = SubResource( 4 )
 [node name="rotation_limit" type="Node2D" parent="."]
 
 [node name="Static_1" type="StaticBody2D" parent="rotation_limit"]
-position = Vector2( -50, 48.9405 )
+position = Vector2( 0, 48.94 )
 collision_layer = 8
 collision_mask = 8
 physics_material_override = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rotation_limit/Static_1"]
-shape = SubResource( 6 )
-
-[node name="Static_2" type="StaticBody2D" parent="rotation_limit"]
-position = Vector2( 50, 50 )
-collision_layer = 8
-collision_mask = 8
-physics_material_override = SubResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rotation_limit/Static_2"]
 shape = SubResource( 6 )

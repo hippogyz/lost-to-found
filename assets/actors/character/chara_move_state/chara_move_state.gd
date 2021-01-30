@@ -15,8 +15,10 @@ func handle_input() :
 func get_input_direction() -> Vector2 : 
 	var input_dir : Vector2
 	input_dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_dir.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	input_dir.y = 0.0
+	#input_dir.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_dir = input_dir.normalized()
+	
 	return input_dir
 
 func move(delta : float, dir : Vector2) :
