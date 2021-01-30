@@ -98,9 +98,14 @@ start_node = "idle_anima"
 
 [node name="Character" type="RigidBody2D"]
 collision_mask = 4
+mass = 0.5
 physics_material_override = SubResource( 15 )
+gravity_scale = 7.0
+continuous_cd = 2
 angular_damp = 50.0
 script = ExtResource( 1 )
+velocity_value = 300.0
+_jump_velocity = 500.0
 
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -135,19 +140,19 @@ parameters/playback = SubResource( 14 )
 [node name="GroundDetector" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( -35, 72 )
+position = Vector2( -35, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="RayCast2D2" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( 0, 72 )
+position = Vector2( 0, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="RayCast2D3" type="RayCast2D" parent="GroundDetector"]
-position = Vector2( 35, 72 )
+position = Vector2( 35, 64.3986 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
