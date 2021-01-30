@@ -36,7 +36,7 @@ func generate_cloud(delta : float) ->void :
 			var cloud_inst = cloud_scene.instance()
 			plat_folder.add_child(cloud_inst)
 			cloud_inst.position.x = auto_move.position.x + screen_size.x * (0.9 + 0.3 * (i + randf())) 
-			cloud_inst.position.y = auto_move.position.y + (0.3 + randf()) * screen_size.y * (0.7 - 0.8 * i)
+			cloud_inst.position.y = auto_move.position.y + (-0.3 + randf()) * screen_size.y * (0.7 - 0.8 * i)
 		
 		cloud_protect_time = cloud_freq
 	else:
@@ -48,7 +48,7 @@ func generate_scale(delta : float) ->void :
 			var scale_inst = scale_scene.instance()
 			plat_folder.add_child(scale_inst)
 			scale_inst.position.x = auto_move.position.x + screen_size.x * (1.0 + 0.2 * randf())
-			scale_inst.position.y = auto_move.position.y + (1.0 + randf()) * screen_size.y * (0.2 - 0.7*i)
+			scale_inst.position.y = auto_move.position.y + (-1.0 + randf()) * screen_size.y * (0.2 - 0.7*i)
 			scale_inst.left_weight_number = 5 + 3 * int(randf())
 			scale_inst.right_weight_number = 5 + 3 * int(randf())
 		

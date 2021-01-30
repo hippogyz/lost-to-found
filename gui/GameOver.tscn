@@ -9,6 +9,7 @@ size = 150
 font_data = ExtResource( 3 )
 
 [node name="Control" type="Node2D"]
+scale = Vector2( 0.8, 0.8 )
 z_index = 1000
 z_as_relative = false
 script = ExtResource( 2 )
