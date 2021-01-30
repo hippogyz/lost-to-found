@@ -14,6 +14,7 @@ func update(delta:float):
 	if input_dir != Vector2.ZERO:
 		emit_signal("state_exit_signal", "move")
 		return
+	move(delta, input_dir)
 
 func handle_input() :
 	if Input.is_action_just_pressed("jump_order"):

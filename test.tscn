@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scale/scale.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/actors/character/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/weight_cubic/weight.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 543.56, 218.559 )
+
+[node name="scale" parent="." instance=ExtResource( 1 )]
+position = Vector2( 816.437, 389.171 )
+
+[node name="scale2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 805.122, 499.48 )
+
+[node name="weight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 832.06, 639.995 )
