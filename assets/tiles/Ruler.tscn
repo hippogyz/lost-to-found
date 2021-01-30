@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/tiles/Ruler.gd" type="Script" id=1]
+[ext_resource path="res://assets/tiles/50m.tscn" type="PackedScene" id=2]
+
+[node name="Ruler" type="Node2D"]
+script = ExtResource( 1 )
+Ratio = 50
+Offset = 10
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 1920, 0, 1920, 1080 )
+width = 5.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="m1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1920, -450 )
+
+[node name="m2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1920, 50 )
+
+[node name="m3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1920, 550 )
+
+[node name="m4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1920, 1050 )

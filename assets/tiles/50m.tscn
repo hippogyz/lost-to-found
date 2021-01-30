@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/tiles/50m.gd" type="Script" id=1]
+
+[node name="50m" type="Line2D"]
+position = Vector2( 1920, 50 )
+points = PoolVector2Array( -100, 0, 0, 0 )
+width = 5.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+
+[node name="BigLabel" type="Label" parent="."]
+margin_left = -144.75
+margin_top = -5.90275
+margin_right = -104.75
+margin_bottom = 8.09725
+text = "9999"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="m" type="Line2D" parent="."]
+position = Vector2( 0, 250 )
+points = PoolVector2Array( -60, 0, 0, 0 )
+width = 4.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="MiddleLabel" type="Label" parent="m"]
+margin_left = -104.873
+margin_top = -6.66444
+margin_right = -64.873
+margin_bottom = 7.33556
+text = "99999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mm1" type="Line2D" parent="."]
+position = Vector2( 0, 25 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm2" type="Line2D" parent="."]
+position = Vector2( 0, 50 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm3" type="Line2D" parent="."]
+position = Vector2( 0, 75 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm4" type="Line2D" parent="."]
+position = Vector2( 0, 100 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm5" type="Line2D" parent="."]
+position = Vector2( 0, 125 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm6" type="Line2D" parent="."]
+position = Vector2( 0, 150 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm7" type="Line2D" parent="."]
+position = Vector2( 0, 175 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm8" type="Line2D" parent="."]
+position = Vector2( 0, 200 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm9" type="Line2D" parent="."]
+position = Vector2( 0, 225 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm10" type="Line2D" parent="."]
+position = Vector2( 0, 275 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm11" type="Line2D" parent="."]
+position = Vector2( 0, 300 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm12" type="Line2D" parent="."]
+position = Vector2( 0, 325 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm13" type="Line2D" parent="."]
+position = Vector2( 0, 350 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm14" type="Line2D" parent="."]
+position = Vector2( 0, 370 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm15" type="Line2D" parent="."]
+position = Vector2( 0, 400 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm16" type="Line2D" parent="."]
+position = Vector2( 0, 425 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm17" type="Line2D" parent="."]
+position = Vector2( 0, 450 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="mm18" type="Line2D" parent="."]
+position = Vector2( 0.499, 475 )
+points = PoolVector2Array( -40, 0, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
