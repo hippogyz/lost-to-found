@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/bg-star1.png" type="Texture" id=1]
+[ext_resource path="res://stages/Backgroud.gd" type="Script" id=2]
+
+[node name="Stars" type="Sprite"]
+position = Vector2( 413.025, 51.5612 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 237, 395 )
+script = ExtResource( 2 )

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://stages/Backgroud.gd" type="Script" id=1]
+[ext_resource path="res://graphics/bg-7.png" type="Texture" id=2]
+
+[node name="background" type="Sprite"]
+position = Vector2( 2252.69, -2487.9 )
+scale = Vector2( 3.56554, 3.56554 )
+z_index = -100
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 2000 )
+script = ExtResource( 1 )
+Velocity = Vector2( 0, -1 )
+is_stop = true
