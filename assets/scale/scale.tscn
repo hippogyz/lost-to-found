@@ -57,6 +57,7 @@ shape = SubResource( 1 )
 
 [node name="left_joint" type="PinJoint2D" parent="arm"]
 position = Vector2( -190, 1 )
+scale = Vector2( 1.2, 1 )
 node_a = NodePath("..")
 node_b = NodePath("RigidBody2D")
 
@@ -77,6 +78,7 @@ shape = SubResource( 2 )
 
 [node name="right_joint" type="PinJoint2D" parent="arm"]
 position = Vector2( 190, 1 )
+scale = Vector2( 1.2, 1 )
 node_a = NodePath("..")
 node_b = NodePath("RigidBody2D")
 
