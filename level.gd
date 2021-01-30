@@ -22,10 +22,19 @@ func _ready() -> void:
 func restart() -> void:
 	get_tree().reload_current_scene()
 		
-		
+func update_difficult() -> void:
+	$PlatContainer/spawner.scale_step = 200 + max_height 
+	$PlatContainer/spawner.cloud_distance = 200 + max_height / 2
+	$PlatContainer/spawner.scale_balance = 2 + max_height / 80
+	if not is_fall:
+		$AutoMove.Velocity.x = -1.0 + max_height / 400
+		$AutoMove.Velocity.y = 0.4 + max_height / 1000
+	
+	
 func _process(delta) -> void:
 	max_height = max(-$AutoMove/Ruler.pixelToHeight(player_m.global_position.y) + $AutoMove/Ruler.Offset, max_height)
 	check_fall_play(delta)
+	update_difficult()
 	
 func check_fall_play(delta : float):
 	if not is_fall and (player_m.global_position.y - $AutoMove/Camera2D.get_camera_screen_center().y) > outside_range :

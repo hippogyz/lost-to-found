@@ -42,11 +42,11 @@ func _physics_process(delta: float) -> void:
 	current_state.update(delta)
 	
 	if pre_state != current_state:
-		print("state changed in update. from ", pre_state.name, " to ", current_state.name)
+		#print("state changed in update. from ", pre_state.name, " to ", current_state.name)
 		pre_state = current_state
 	
 	current_state.handle_input()
 	
 	if pre_state != current_state:
-		print("state changed in handle. from ", pre_state.name, " to ", current_state.name)
+		#print("state changed in handle. from ", pre_state.name, " to ", current_state.name)
 		pre_state = current_state

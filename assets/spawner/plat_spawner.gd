@@ -4,23 +4,22 @@ export var begin_range : float = 0.0
 var screen_size
 
 var scale_scene
-var scale_protect_time
-export var scale_freq : float = 7.0
-export var scale_prob : float = 0.4
+export var scale_distance : float = 500
+export var scale_step : float = 300
+export var scale_offset : float = 0.5
+export var scale_balance : int = 2
 
 var cloud_scene
-var cloud_protect_time
-export var cloud_freq : float = 3.0
-export var cloud_prob : float = 0.4
+export var cloud_distance : float = 300
 
 var plat_folder
 var auto_move
+var last_clound_pos = Vector2(0, 0)
+var last_scale_pos = Vector2(0, 0)
 
 func _ready() -> void:
 	scale_scene = load("res://assets/scale/scale.tscn")
-	scale_protect_time = scale_freq
 	cloud_scene = load("res://assets/cloud/cloud.tscn")
-	cloud_protect_time = cloud_freq
 	plat_folder = get_parent()
 	auto_move = get_parent().get_parent().get_node("AutoMove")
 	screen_size = get_viewport_rect().size
@@ -31,27 +30,22 @@ func _process(delta: float) -> void:
 		generate_scale(delta)
 
 func generate_cloud(delta : float) ->void :
-	if cloud_protect_time < 0 && randf() < cloud_prob:
-		for i in range(3):
-			var cloud_inst = cloud_scene.instance()
-			plat_folder.add_child(cloud_inst)
-			cloud_inst.position.x = auto_move.position.x + screen_size.x * (0.9 + 0.3 * (i + randf())) 
-			cloud_inst.position.y = auto_move.position.y + (-0.3 + randf()) * screen_size.y * (0.7 - 0.8 * i)
-		
-		cloud_protect_time = cloud_freq
-	else:
-		cloud_protect_time -= delta
+	if last_clound_pos.x + cloud_distance < auto_move.position.x + screen_size.x:
+		var cloud_inst = cloud_scene.instance()
+		plat_folder.add_child(cloud_inst)
+		cloud_inst.position.x = auto_move.position.x + screen_size.x + 100 * (-0.5 + randf())
+		cloud_inst.position.y = auto_move.position.y + (-0.5 + randf()) * screen_size.y 
+		last_clound_pos = cloud_inst.position
+		print("[CLOUD] spawn at ", last_clound_pos)
 
 func generate_scale(delta : float) ->void :
-	if scale_protect_time < 0 && randf() < scale_prob:
-		for i in range(1):
-			var scale_inst = scale_scene.instance()
-			plat_folder.add_child(scale_inst)
-			scale_inst.position.x = auto_move.position.x + screen_size.x * (1.0 + 0.2 * randf())
-			scale_inst.position.y = auto_move.position.y + (-1.0 + randf()) * screen_size.y * (0.2 - 0.7*i)
-			scale_inst.left_weight_number = 5 + 3 * int(randf())
-			scale_inst.right_weight_number = 5 + 3 * int(randf())
-		
-		scale_protect_time = scale_freq
-	else:
-		scale_protect_time -= delta
+	if last_scale_pos.x + scale_distance < auto_move.position.x + screen_size.x:
+		var scale_inst = scale_scene.instance()
+		scale_inst.position.x = auto_move.position.x + screen_size.x + 100 * (-0.5 + randf())
+		scale_inst.position.y = last_scale_pos.y - (1 + scale_offset - randf()) * scale_step
+		var base = int(randf() * 10)
+		scale_inst.left_weight_number = base + (randf() - 0.5) * scale_balance
+		scale_inst.right_weight_number = base + (randf() - 0.5) * scale_balance
+		last_scale_pos = scale_inst.position
+		plat_folder.add_child(scale_inst)
+		print("[scale] spawn at ", last_scale_pos)

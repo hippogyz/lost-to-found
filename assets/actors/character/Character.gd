@@ -54,7 +54,7 @@ func lose_mass(lose : float) -> void:
 	if lose > 0:
 		emit_signal("spawn_cubic", global_position, lose)
 		# mass = max(mass - lose, 0.1)
-		blackness = min(1.0, blackness + 0.003)
+		blackness = min(1.0, blackness + 0.005)
 		get_node("sprite").material.set_shader_param("blackness", blackness)
 		throw_protect_time = 0.1
 		print(mass)
