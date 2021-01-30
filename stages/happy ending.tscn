@@ -18,7 +18,7 @@ position = Vector2( 437.56, 856.968 )
 [node name="sprite" parent="Character" index="0"]
 position = Vector2( 14.9831, -76.9131 )
 scale = Vector2( 2, 2 )
-frame = 3
+frame = 0
 
 [node name="AnimationTree" parent="Character" index="4"]
 parameters/playback = SubResource( 1 )

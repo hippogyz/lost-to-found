@@ -14,11 +14,12 @@
 [node name="Stage" type="Node2D"]
 script = ExtResource( 7 )
 next_stage = ExtResource( 10 )
+outside_range = 700.0
 curtain_time = 30.0
 
 [node name="AutoMove" type="Node2D" parent="."]
 script = ExtResource( 3 )
-Velocity = Vector2( -0.8, 0.3 )
+Velocity = Vector2( -0.8, 0.5 )
 
 [node name="Camera2D" type="Camera2D" parent="AutoMove"]
 anchor_mode = 0
@@ -29,6 +30,7 @@ zoom = Vector2( 0.8, 0.8 )
 
 [node name="Ruler" parent="AutoMove" instance=ExtResource( 9 )]
 position = Vector2( -384.738, 50.7968 )
+Ratio = 25
 
 [node name="Curtain" type="Node2D" parent="AutoMove"]
 z_index = 4096
@@ -89,9 +91,8 @@ position = Vector2( 383.22, 397.231 )
 position = Vector2( 2235.37, 53.2503 )
 
 [node name="spawner" parent="PlatContainer" instance=ExtResource( 11 )]
-scale_freq = 6.0
-scale_prob = 0.2
-cloud_freq = 8.0
+scale_distance = 400.0
+cloud_distance = 400.0
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
 [connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
 [connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]
