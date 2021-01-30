@@ -13,5 +13,4 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	emit_signal("player_on_spikes")
 	pass # Replace with function body.

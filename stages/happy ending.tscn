@@ -8,9 +8,9 @@
 [ext_resource path="res://graphics/bg-5.png" type="Texture" id=6]
 [ext_resource path="res://graphics/bg-7.png" type="Texture" id=7]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 960, 10 )
 
 [node name="HappyEnd" type="Node2D"]
@@ -68,7 +68,7 @@ position = Vector2( 14.9831, -76.9131 )
 scale = Vector2( 2, 2 )
 
 [node name="AnimationTree" parent="Character" index="4"]
-parameters/playback = SubResource( 2 )
+parameters/playback = SubResource( 1 )
 
 [node name="GroundDetector" parent="Character" index="5"]
 visible = false
@@ -79,6 +79,6 @@ collision_mask = 271
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 954.921, 956.919 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [editable path="Character"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-signal count_down_finish()
+signal restart()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,11 +13,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$VC/CC2/Label2.text = String(int($Timer.time_left))
 	$VC/CC3/HBoxContainer/Score.text = String(int(score))
+	if Input.is_action_pressed("jump_order"):
+		emit_signal("restart")
 	pass
 
 
-func _on_Timer_timeout():
-	emit_signal("count_down_finish")
-	pass # Replace with function body.
+

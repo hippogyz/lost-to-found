@@ -8,7 +8,6 @@ export var next_stage : PackedScene
 export var outside_range : float = 1000
 export var curtain_time : float = 3
 
-export var max_try_time : int = 10
 var rest_try_time : int
 var is_game_over = false
 var is_fall = false
@@ -29,6 +28,7 @@ func check_fall_play(delta : float):
 	if not is_fall and (player_m.global_position.y - $AutoMove/Camera2D.get_camera_screen_center().y) > outside_range :
 		is_fall = true
 		$AutoMove.Velocity = Vector2(0, 0)
+		game_over(-$AutoMove/Ruler.pixelToHeight(player_m.global_position.y) + $AutoMove/Ruler.Offset)
 	if is_fall:
 		$AutoMove/Curtain.visible = true
 		$AutoMove/Curtain/ColorRect.color.a += delta / curtain_time
@@ -47,11 +47,7 @@ func game_over(score : int) -> void:
 	var popup = game_over.instance()
 	popup.score = score
 	$AutoMove.add_child(popup)
-	popup.connect("count_down_finish", self, "restart")
+	popup.connect("restart", self, "restart")
 	emit_signal("game_over_signal")
 
 
-func _on_spikes_player_on_spikes():
-	$AutoMove.Velocity = Vector2(0, 0)
-	game_over(-$AutoMove/Ruler.pixelToHeight(player_m.global_position.y) + $AutoMove/Ruler.Offset) 
-	pass # Replace with function body.
