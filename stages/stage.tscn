@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/actors/character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stages/background.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://stages/happy_ending_anima/happy ending.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/spawner/plat_spawner.tscn" type="PackedScene" id=11]
 [ext_resource path="res://graphics/bg-8.png" type="Texture" id=12]
+[ext_resource path="res://sound/jump03_1.wav" type="AudioStream" id=13]
+[ext_resource path="res://sound/metal-p04_1.wav" type="AudioStream" id=14]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource( 7 )
@@ -57,6 +59,14 @@ z_index = -500
 [node name="static_back" type="Sprite" parent="AutoMove/CanvasLayer"]
 position = Vector2( 960, 540 )
 texture = ExtResource( 12 )
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="AutoMove"]
+position = Vector2( 960, 540 )
+stream = ExtResource( 13 )
+
+[node name="DropAudio" type="AudioStreamPlayer2D" parent="AutoMove"]
+position = Vector2( 960, 540 )
+stream = ExtResource( 14 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 361.061, 322.091 )
@@ -107,5 +117,5 @@ cloud_distance = 600.0
 [node name="cloud" parent="PlatContainer" instance=ExtResource( 6 )]
 position = Vector2( 366.667, 422.667 )
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
+[connection signal="input_jump_realize" from="Character" to="." method="_on_Character_input_jump_realize"]
 [connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
-[connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]

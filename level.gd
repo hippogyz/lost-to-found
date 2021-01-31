@@ -72,4 +72,8 @@ func _on_Character_spawn_cubic(pos, lose):
 		var w = weight_cubic.instance()
 		w.global_position = p
 		add_child(w) 
-	pass # Replace with function body.
+	$AutoMove.get_node("DropAudio").play()
+
+
+func _on_Character_input_jump_realize() -> void:
+	$AutoMove.get_node("JumpAudio").play()

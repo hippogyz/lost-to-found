@@ -2,6 +2,7 @@ extends RigidBody2D
 
 onready var ground_detector = get_node("GroundDetector")
 signal spawn_cubic(pos, lose)
+signal input_jump_realize()
 export var velocity_value : float = 200.0
 export var _jump_velocity : float = 200.0
 
@@ -33,6 +34,7 @@ func _integrate_forces(s) ->void :
 	if is_jump:
 		is_jump = false
 		lv.y -= _jump_velocity
+		emit_signal("input_jump_realize")
 	lv.y = min(lv.y, _max_height_velocity)
 	
 	if lv.y < 0.0:
