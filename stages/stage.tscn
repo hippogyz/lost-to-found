@@ -116,6 +116,33 @@ cloud_distance = 600.0
 
 [node name="cloud" parent="PlatContainer" instance=ExtResource( 6 )]
 position = Vector2( 366.667, 422.667 )
+
+[node name="cloud2" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 1366.54, 455.63 )
+
+[node name="cloud3" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 893.072, -63.7834 )
+
+[node name="cloud4" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 1728.13, -236.588 )
+
+[node name="cloud5" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 2000.82, -74.771 )
+
+[node name="cloud6" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 1201.83, -439.873 )
+
+[node name="cloud7" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 1861.13, 512.567 )
+
+[node name="cloud8" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 2260.1, 392.983 )
+
+[node name="cloud9" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 1754.29, 299.432 )
+
+[node name="cloud10" parent="PlatContainer" instance=ExtResource( 6 )]
+position = Vector2( 2627.96, 2.92322 )
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
 [connection signal="input_jump_realize" from="Character" to="." method="_on_Character_input_jump_realize"]
 [connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
