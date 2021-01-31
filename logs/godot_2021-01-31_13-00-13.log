@@ -1,0 +1,5 @@
+Godot Engine v3.2.3.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: GeForce GTX 1660 Ti/PCIe/SSE2
+ 
+**ERROR**: Condition "header[0] != 'G' || header[1] != 'D' || header[2] != 'S' || header[3] != 'T'" is true. Returned: ERR_FILE_CORRUPT
+   At: scene/resources/texture.cpp:508:_load_data() - Condition "header[0] != 'G' || header[1] != 'D' || header[2] != 'S' || header[3] != 'T'" is true. Returned: ERR_FILE_CORRUPT
