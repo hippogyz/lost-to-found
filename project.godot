@@ -22,8 +22,8 @@ _global_script_class_icons={
 
 config/name="Lost To Found"
 run/main_scene="res://stages/title.tscn"
-config/icon="res://ball-logo.png"
-config/windows_native_icon="res://askk2-2pyp4-005.ico"
+config/icon="res://icon.png"
+config/windows_native_icon="res://favicon.ico"
 
 [autoload]
 
