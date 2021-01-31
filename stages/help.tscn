@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://graphics/instruction.png" type="Texture" id=1]
+[ext_resource path="res://assets/scale/scale.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/weight_cubic/weight.tscn" type="PackedScene" id=3]
+
+[node name="Help" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 316.329, 185.516 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+
+[node name="scale" parent="." instance=ExtResource( 2 )]
+position = Vector2( 737.86, 359.708 )
+
+[node name="weight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 547.828, 242.598 )
+
+[node name="weight2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 569.161, 247.932 )
+
+[node name="weight3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 543.161, 266.598 )
+
+[node name="weight4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 601.828, 289.265 )
+
+[node name="weight5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 519.828, 304.598 )
+
+[node name="weight6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 550.495, 340.598 )
+
+[node name="weight7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 906.495, 69.9316 )
+
+[node name="weight8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 927.828, 75.2649 )
+
+[node name="weight9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 901.828, 93.9316 )
+
+[node name="weight10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 960.495, 116.598 )
+
+[node name="weight11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 878.495, 131.932 )
+
+[node name="weight12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 909.162, 167.932 )
+
+[node name="weight13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 911.828, 127.265 )
+
+[node name="weight14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 933.161, 132.598 )
+
+[node name="weight15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 907.161, 151.265 )
+
+[node name="weight16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 965.828, 173.932 )
+
+[node name="weight17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 883.828, 189.265 )
+
+[node name="weight18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 914.495, 225.265 )
