@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/improbable-by-kevin-macleod-from-filmmusic-io.ogg-00b7c74bcfddf9e42104a722f6895612.oggstr"
+
+[deps]
+
+source_file="res://sound/improbable-by-kevin-macleod-from-filmmusic-io.ogg"
+dest_files=[ "res://.import/improbable-by-kevin-macleod-from-filmmusic-io.ogg-00b7c74bcfddf9e42104a722f6895612.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
