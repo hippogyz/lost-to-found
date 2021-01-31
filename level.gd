@@ -23,7 +23,7 @@ func restart() -> void:
 	get_tree().reload_current_scene()
 		
 func update_difficult() -> void:
-	$PlatContainer/spawner.scale_step = 200 + max_height 
+	$PlatContainer/spawner.scale_step = min(200 + max_height, 300) 
 	$PlatContainer/spawner.cloud_distance = 200 + max_height / 2
 	$PlatContainer/spawner.scale_balance = 2 + max_height / 80
 	if not is_fall:

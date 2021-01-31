@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if begin_range < auto_move.position.x && !auto_move.get_parent().is_game_over:
 		generate_cloud(delta)
 		generate_scale(delta)
+		generate_lower_cloud(delta)
 
 func generate_cloud(delta : float) ->void :
 	if last_clound_pos.x + cloud_distance < auto_move.position.x + screen_size.x:
@@ -35,6 +36,15 @@ func generate_cloud(delta : float) ->void :
 		plat_folder.add_child(cloud_inst)
 		cloud_inst.position.x = auto_move.position.x + screen_size.x + 100 * (-0.5 + randf())
 		cloud_inst.position.y = auto_move.position.y + (-0.5 + randf()) * screen_size.y 
+		last_clound_pos = cloud_inst.position
+		print("[CLOUD] spawn at ", last_clound_pos)
+
+func generate_lower_cloud(delta : float) ->void :
+	if last_clound_pos.x + cloud_distance < auto_move.position.x + screen_size.x:
+		var cloud_inst = cloud_scene.instance()
+		plat_folder.add_child(cloud_inst)
+		cloud_inst.position.x = auto_move.position.x + screen_size.x + 100 * (-0.5 + randf())
+		cloud_inst.position.y = auto_move.position.y + (-0.2 + randf()) * screen_size.y 
 		last_clound_pos = cloud_inst.position
 		print("[CLOUD] spawn at ", last_clound_pos)
 
