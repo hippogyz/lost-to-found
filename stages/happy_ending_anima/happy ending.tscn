@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://stages/Bottom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stages/happy_ending_anima/happy ending.gd" type="Script" id=2]
 [ext_resource path="res://stages/happy_ending_anima/character_he.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stages/happy_ending_anima/p-end.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "pre_curtain"
@@ -61,6 +62,63 @@ tracks/3/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "appear"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "New Anim"
+length = 8.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 809.598, -0.25, 0, 0.25, 0, 939.803, -0.25, 0, 0.25, 0, 1141.85, -0.25, 0, 0.25, 0, 998.172, -0.25, 0, 0.25, 0, 809.598, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4, 6, 8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 220.19, -0.25, 0, 0.25, 0, 296.518, -0.25, 0, 0.25, 0, 193.251, -0.25, 0, 0.25, 0, 175.292, -0.25, 0, 0.25, 0, 220.19, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4, 6, 8 )
+}
+
 [node name="HappyEnd" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -82,4 +140,17 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "pre_curtain"
 anims/pre_curtain = SubResource( 1 )
+
+[node name="staff" type="Sprite" parent="."]
+position = Vector2( 1140.32, 189.541 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="staff"]
+autoplay = "default"
+anims/appear = SubResource( 2 )
+anims/default = SubResource( 3 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="staff"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 4 )
 [connection signal="begin_to_walk" from="character_he" to="." method="_set_background_move"]

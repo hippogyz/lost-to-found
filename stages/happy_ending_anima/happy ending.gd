@@ -36,3 +36,6 @@ func _set_background_move(is_stop : bool) -> void:
 	var bg_list = $ParallaxBackground/ParallaxLayer.get_children()
 	for bg in bg_list:
 		bg.is_stop = is_stop
+	
+	if !is_stop:
+		$staff/AnimationPlayer.play("appear")
