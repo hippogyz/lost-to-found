@@ -100,10 +100,12 @@ position = Vector2( 2235.37, 53.2503 )
 [node name="spawner" parent="PlatContainer" instance=ExtResource( 11 )]
 begin_range = 800.0
 scale_distance = 400.0
+add_lower_cloud = true
+add_higher_scale = true
 cloud_distance = 600.0
 
 [node name="cloud" parent="PlatContainer" instance=ExtResource( 6 )]
 position = Vector2( 366.667, 422.667 )
 [connection signal="player_on_spikes" from="AutoMove/spikes" to="." method="_on_spikes_player_on_spikes"]
-[connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]
 [connection signal="spawn_cubic" from="Character" to="." method="_on_Character_spawn_cubic"]
+[connection signal="spawn_cubic" from="Character" to="Character" method="_on_Character_spawn_cubic"]

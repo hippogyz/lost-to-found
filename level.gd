@@ -24,7 +24,7 @@ func restart() -> void:
 		
 func update_difficult() -> void:
 	$PlatContainer/spawner.scale_step = min(200 + max_height, 300)
-	$PlatContainer/spawner.scale_distance = $PlatContainer/spawner.scale_step * 1.8
+	$PlatContainer/spawner.scale_distance = $PlatContainer/spawner.scale_step * 2
 	$PlatContainer/spawner.cloud_distance = 200 + max_height / 2
 	$PlatContainer/spawner.scale_balance = 1 + max_height / 40
 	if not is_fall:
