@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/PottaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://gui/StageClear.gd" type="Script" id=2]
-[ext_resource path="res://fonts/gui-fonts.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/gui-fonts2.tres" type="DynamicFont" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
