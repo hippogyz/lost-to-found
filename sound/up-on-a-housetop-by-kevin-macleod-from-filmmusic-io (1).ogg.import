@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/up-on-a-housetop-by-kevin-macleod-from-filmmusic-io (1).ogg-99d79aa03e2f43939de452f8cc09eceb.oggstr"
+
+[deps]
+
+source_file="res://sound/up-on-a-housetop-by-kevin-macleod-from-filmmusic-io (1).ogg"
+dest_files=[ "res://.import/up-on-a-housetop-by-kevin-macleod-from-filmmusic-io (1).ogg-99d79aa03e2f43939de452f8cc09eceb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
