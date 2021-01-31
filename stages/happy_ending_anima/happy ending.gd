@@ -1,16 +1,20 @@
 extends Node2D
 
+export var pre_time_max : float = 3.0
+var pre_time
+onready var pre_curtain = get_node("ColorRect")
+var pre_anima_playing
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pre_curtain.color.a = 1
+	pre_time = pre_time_max
+	pre_anima_playing = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta: float) -> void:
+	if pre_anima_playing:
+		if pre_time > 0:
+			pre_time -= delta
+			pre_curtain.color.a = max( 0.0, pre_curtain.color.a - 1.0 / pre_time_max * delta)
+		else:
+			pre_anima_playing = false
+			get_node("character_he").controlable = true
