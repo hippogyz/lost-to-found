@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_stop and abs(g_texture_size.y) < abs(region_rect.position.y) + 540:
+	if is_stop:
 		pass
 	else:
 		region_rect.position += Velocity
