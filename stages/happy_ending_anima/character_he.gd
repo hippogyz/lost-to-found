@@ -8,6 +8,7 @@ var playing_final : bool = false
 
 func _ready() -> void:
 	current_anima = "idle"
+	controlable = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

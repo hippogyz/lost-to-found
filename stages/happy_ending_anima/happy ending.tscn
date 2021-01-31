@@ -40,6 +40,16 @@ position = Vector2( 76.1092, -23.7842 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2( 1419.91, 792.012 )
 shape = SubResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -93.0
+margin_top = -36.0
+margin_right = 1990.0
+margin_bottom = 1155.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Area2D" to="character_he" method="_final_anima_trigger"]
 [connection signal="body_entered" from="Area2D2" to="character_he" method="_anima_hum"]
 [connection signal="body_entered" from="Area2D3" to="character_he" method="_anima_friend"]
