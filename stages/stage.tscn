@@ -16,7 +16,7 @@
 [node name="Stage" type="Node2D"]
 script = ExtResource( 7 )
 next_stage = ExtResource( 10 )
-outside_range = 700.0
+outside_range = 600.0
 curtain_time = 30.0
 
 [node name="AutoMove" type="Node2D" parent="."]
@@ -29,6 +29,7 @@ current = true
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="spikes" parent="AutoMove" instance=ExtResource( 8 )]
+visible = false
 
 [node name="Ruler" parent="AutoMove" instance=ExtResource( 9 )]
 position = Vector2( -384.738, 50.7968 )
